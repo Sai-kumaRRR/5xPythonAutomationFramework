@@ -1,21 +1,22 @@
-#Dashboard Page Class
+# Dashboard Page Class
 
 # Page Locators
-#Page Actions
+# Page Actions
 
+import test.Utils.commom_Utils
+import webdriver_wait
 from selenium.webdriver.common.by import By
-from test.Utils.Utils import webdriver_wait
+
 
 class DashboardPage:
 
     def __init__(self, driver):
         self.driver = driver
 
-        user_logged_in = (By.XPATH,"////span[@data-qa='lufexuloga']")
+        user_logged_in = (By.XPATH, "////span[@data-qa='lufexuloga']")
 
         def get_user_logged_in(self):
             return self.driver.find_element(*DashboardPage.user_logged_in)
-
 
         def user_logged_in_text(self):
             webdriver_wait(driver=self.driver, element_tuple=self.user_logged_in, timeout=5)
