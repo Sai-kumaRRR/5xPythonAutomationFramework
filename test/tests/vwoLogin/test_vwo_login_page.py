@@ -1,21 +1,19 @@
-import allure
+import os
+
 import pytest
-import time
-
+from dotenv import load_dotenv
 from selenium import webdriver
-
-# Assertions and use the page object class
-
-# Webdriver Start
-# User Interaction + Assertions
-# Close Webdriver
-
 from test.constants.constants import Constants
 from test.pageObjects.pageObjectModel.vwo.loginPage import loginPage
 from test.pageobjects.pageObjectModel.vwo.dashboardPage import DashboardPage
-from dotenv import load_dotenv
-import os
+
 from test.Utils.Utils import *
+
+
+# Assertions and use the page object class
+# Webdriver Start
+# User Interaction + Assertions
+# Close Webdriver
 
 
 @pytest.fixture()
@@ -38,8 +36,6 @@ def test_vwo_login_negative(setup):
     error_msg_element = login_page.get_error_message_text()
     take_screen_shot(driver=driver, name="test_vwo_login_negative")
     assert error_msg_element == os.getenv("error_message_expected")
-
-
 
 
 @allure.epic("VWO Login Test")
