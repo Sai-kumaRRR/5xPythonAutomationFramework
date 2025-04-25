@@ -1,12 +1,14 @@
 # Dashboard Page Class
-from asyncio import timeout
 
 # Page Locators
 # Page Actions
 
-import test.Utils.Commom_Utils import Webdriver_wait
-
+from test.Utils.commom_Utils import WebDriver_Wait
+import time
 from selenium.webdriver.common.by import By
+
+
+
 
 
 class FreeTrialPage:

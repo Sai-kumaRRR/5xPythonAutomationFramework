@@ -25,9 +25,9 @@ def setup():
     return driver
 
 
-@allure.title("VWO Login Test")
-@allure.description("TC0 - VWO App Negative Test")
-@allure.feature("Feature |VWO App Negative Test")
+@allure.title("VWO Free trial")
+@allure.description("TC0 - VWO free trial")
+@allure.feature("Feature |VWO free trial")
 @pytest.mark.negative
 def test_vwo_ft_negative(setup):
     driver = setup

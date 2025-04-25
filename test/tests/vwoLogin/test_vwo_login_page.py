@@ -4,7 +4,7 @@ import pytest
 from dotenv import load_dotenv
 from selenium import webdriver
 from test.constants.constants import Constants
-from test.pageObjects.pageObjectModel.vwo.loginPage import loginPage
+from test.pageObjects.pageObjectModel.vwo.loginPage import LoginPage
 from test.pageobjects.pageObjectModel.vwo.dashboardPage import DashboardPage
 
 from test.Utils.Utils import *
@@ -23,7 +23,6 @@ def setup():
     driver.maximize_window()
     driver.get(Constants.app_url())
     return driver
-
 
 @allure.title("VWO Login Test")
 @allure.description("TC0 - VWO App Negative Test")
@@ -46,5 +45,5 @@ def test_vwo_login_positive(setup):
     login_page = LoginPage(driver=driver)
     login_page.login_to_vwo(usr=os.getenv("USERNAME"), pwd=os.getenv("PASSWORD"))
     dashboard_Page = DashboardPage(driver=driver)
-    take_screen_shot(driver=driver, name="test_vwo_login_psitive")
+    take_screen_shot(driver=driver, name="test_vwo_login_positive")
     assert os.getenv("USERNAME_LOGGED_IN") in dashboard_Page.user_logged_in_text()
